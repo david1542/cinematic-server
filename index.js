@@ -22,20 +22,20 @@ app.use(cors())
 app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.set('Access-Control-Allow-Origin', '*')
 
   // Request methods you wish to allow
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
+  res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
 
   // Request headers you wish to allow
-  res.setHeader('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept, x-xsrf-token', 'token')
+  res.set('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept, x-xsrf-token', 'token')
 
   // Set to true if you need the website to include cookies in the requests sent
   // to the API (e.g. in case you use sessions)
-  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.set('Access-Control-Allow-Credentials', true)
 
   // Request headers you wish to expose
-  res.setHeader('Access-Control-Expose-Headers', false)
+  res.set('Access-Control-Expose-Headers', false)
 
   next()
 })
