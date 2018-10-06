@@ -8,6 +8,7 @@ const auth = require('../middlewares/auth')
 router.post('/register', function (req, res) {
   if (!req.body.userDetails || !validateUser(req.body.userDetails)) return res.sendStatus(400)
 
+  console.log('User is registering')
   function validateUser (userDetails) {
     if (!userDetails.email || !userDetails.password ||
       !userDetails.firstName || !userDetails.lastName) {
@@ -19,9 +20,16 @@ router.post('/register', function (req, res) {
 
   const { userDetails } = req.body
 
+  console.log('Creating new user')
   User.create(userDetails, function (err, newUser) {
-    if (err || !newUser) return res.sendStatus(500)
+    if (err || !newUser) {
+      console.log('Error')
+      console.log(err)
+      console.log(newUser)      
+      return res.sendStatus(500)
+    }
 
+    console.log('Successfully created user')
     res.json(newUser)
   })
 })
