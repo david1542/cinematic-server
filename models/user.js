@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const timestamps = require('mongoose-timestamps')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt-nodejs')
 
 const userSchema = new Schema({
   firstName: {
