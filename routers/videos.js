@@ -44,6 +44,7 @@ const connectedUserClients = new Map()
 router.get('/subtitles', async function (req, res, next) {
   if (!req.query.query && !req.query.langcode) return res.sendStatus(400)
 
+  console.log('Fetching subtitles for: ' + filename)
   const { filename } = req.query
   const options = {
     ...req.query
@@ -64,6 +65,7 @@ router.get('/subtitles', async function (req, res, next) {
     return res.sendStatus(500)
   }
 
+  console.log('Fetched subtitles for: ' + filename)
   const lang = subtitles[options.langcode]
 
   if (!lang) return res.sendStatus(404)
@@ -102,6 +104,7 @@ router.get('/subtitles', async function (req, res, next) {
     }
   })
 
+  console.log('Found subtitles best match!')
   const match = lang[bestIndex]
   const parts = match.filename.split('.')
   const fileType = '.' + parts[parts.length - 1]
@@ -114,6 +117,7 @@ router.get('/subtitles', async function (req, res, next) {
   const tmpFile = fs.createWriteStream(remoteDir)
 
   function tryDownload () {
+    console.log('Downloading the srt file from opensubtitles')
     https.get(match.url, response => {
       if (!(response.pipe)) {
         tryDownload()
@@ -128,10 +132,16 @@ router.get('/subtitles', async function (req, res, next) {
   })
 
   tmpFile.on('finish', () => {
+    console.log('Saved file in tmp folder')
     var data = fs.readFileSync(remoteDir)
 
+    console.log('Conerting the .srt file to .vtt file')
     srt2vtt(data, 1255, (err, vttData) => {
-      if (err) return res.sendStatus(500)
+      console.log('Conversion done!')
+      if (err) {
+        console.log(err)
+        return res.sendStatus(500)
+      }
       const outputDir = appDir + '/tmp/' + fileName + '.vtt'
 
       console.log(outputDir)
@@ -142,10 +152,12 @@ router.get('/subtitles', async function (req, res, next) {
       res.set('Content-Type', 'mime/vtt')
       res.set('Content-Disposition', 'attachment; filename=' + subtitlesName)
 
+      console.log('Sending the .vtt file to the client')
       // Sending files to the user
       subtitlesStream.pipe(res)
 
       res.on('finish', () => {
+        console.log('Finished streaming the subtitles file to the client. Cleaning the 2 files')
         fs.unlinkSync(outputDir)
         fs.unlinkSync(remoteDir)
       })
@@ -333,6 +345,7 @@ router.get('/torrents', async function (req, res) {
   torrentSearch.enableProvider('KickassTorrents')
   torrentSearch.enableProvider('1337x')
 
+  console.log('Sending requests for fetching torrents and subtitles')
   const torrents = torrentSearch.search(term, 'Movies')
   const subtitles = OpenSubtitles.search({
     extensions: ['srt', 'vtt'],
@@ -341,6 +354,7 @@ router.get('/torrents', async function (req, res) {
   })
 
   const result = await Promise.all([torrents, subtitles])
+  console.log('Done! fetched subtitles and torrents')
   const filteredTorrents = result[0].filter(torrent => (
     torrent.title.toLowerCase().includes(term.toLowerCase())
   )).sort(function (a, b) {
@@ -363,6 +377,9 @@ router.get('/torrents', async function (req, res) {
   if (!filteredTorrents) {
     return res.sendStatus(500)
   }
+
+  console.log('Manipulated available langs. Number: ' + availableLangs.length)
+  console.log('Iterated over torrents. Number: ' + torrents.length)
 
   async.map(filteredTorrents, function (torrent, callback) {
     torrentSearch.getMagnet(torrent).then(function (magnet) {
