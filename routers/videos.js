@@ -44,8 +44,8 @@ const connectedUserClients = new Map()
 router.get('/subtitles', async function (req, res, next) {
   if (!req.query.query && !req.query.langcode) return res.sendStatus(400)
 
-  console.log('Fetching subtitles for: ' + filename)
   const { filename } = req.query
+  console.log('Fetching subtitles for: ' + filename)
   const options = {
     ...req.query
   }
