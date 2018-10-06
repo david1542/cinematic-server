@@ -107,7 +107,10 @@ router.get('/subtitles', async function (req, res, next) {
   const fileType = '.' + parts[parts.length - 1]
   const fileName = crypto.randomBytes(40).toString('hex')
   const appDir = path.dirname(require.main.filename)
+
+  console.log(appDir)
   const remoteDir = appDir + '/tmp/' + fileName + fileType
+
   const tmpFile = fs.createWriteStream(remoteDir)
 
   function tryDownload () {
@@ -131,6 +134,7 @@ router.get('/subtitles', async function (req, res, next) {
       if (err) return res.sendStatus(500)
       const outputDir = appDir + '/tmp/' + fileName + '.vtt'
 
+      console.log(outputDir)
       fs.writeFileSync(outputDir, vttData)
 
       const subtitlesStream = streamifier.createReadStream(vttData)
