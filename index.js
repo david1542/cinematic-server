@@ -19,26 +19,26 @@ mongoose.connect(config.MONGODB_URI, function (err) {
 })
 
 app.use(cors())
-app.use(function (req, res, next) {
+// app.use(function (req, res, next) {
 
-  // Website you wish to allow to connect
-  res.set('Access-Control-Allow-Origin', '*')
+//   // Website you wish to allow to connect
+//   res.set('Access-Control-Allow-Origin', '*')
 
-  // Request methods you wish to allow
-  res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
+//   // Request methods you wish to allow
+//   res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
 
-  // Request headers you wish to allow
-  res.set('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept, x-xsrf-token', 'token')
+//   // Request headers you wish to allow
+//   res.set('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept, x-xsrf-token', 'token')
 
-  // Set to true if you need the website to include cookies in the requests sent
-  // to the API (e.g. in case you use sessions)
-  res.set('Access-Control-Allow-Credentials', true)
+//   // Set to true if you need the website to include cookies in the requests sent
+//   // to the API (e.g. in case you use sessions)
+//   res.set('Access-Control-Allow-Credentials', true)
 
-  // Request headers you wish to expose
-  res.set('Access-Control-Expose-Headers', false)
+//   // Request headers you wish to expose
+//   res.set('Access-Control-Expose-Headers', false)
 
-  next()
-})
+//   next()
+// })
 
 app.use(auth.force_https)
 app.use(bodyParser.json())
