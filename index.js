@@ -18,7 +18,10 @@ mongoose.connect(config.MONGODB_URI, function (err) {
   }
 })
 
-app.use(cors())
+const corsOptions = {
+  credentials : true
+}
+app.use(cors(corsOptions))
 // app.use(function (req, res, next) {
 
 //   // Website you wish to allow to connect
