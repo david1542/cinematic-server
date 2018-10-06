@@ -19,6 +19,27 @@ mongoose.connect(config.MONGODB_URI, function (err) {
 })
 
 app.use(cors())
+app.use(function (req, res, next) {
+
+  // Website you wish to allow to connect
+  res.setHeader('Access-Control-Allow-Origin', '*')
+
+  // Request methods you wish to allow
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
+
+  // Request headers you wish to allow
+  res.setHeader('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept, x-xsrf-token', 'token')
+
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
+  res.setHeader('Access-Control-Allow-Credentials', true)
+
+  // Request headers you wish to expose
+  res.setHeader('Access-Control-Expose-Headers', false)
+
+  next()
+})
+
 app.use(auth.force_https)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
