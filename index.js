@@ -7,6 +7,7 @@ const config = require('./config')
 const auth = require('./middlewares/auth')
 const usersRoutes = require('./routers/users')
 const videosRoutes = require('./routers/videos')
+const package = require('./package')
 
 mongoose.set('debug', true)
 mongoose.connect(config.MONGODB_URI, function (err) {
@@ -27,10 +28,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/users', usersRoutes)
 app.use('/videos', videosRoutes)
 
-app.get('/', function (req, res) {
-  res.send('hello')
-})
+app.get(/^\/$/, (req, res) => {
+  res.json({
+    name: package.name,
+    version: package.version,
+  });
+});
 
-app.listen(4000, function () {
-  console.log('Server started on port 4000')
+app.listen(config.PORT, function () {
+  console.log('Server started on port ' + config.PORT);
 })
