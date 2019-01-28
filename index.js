@@ -18,14 +18,11 @@ mongoose.connect(config.MONGODB_URI, function (err) {
   }
 })
 
-const corsOptions = {
-  credentials : true
-}
-
-app.options('*', cors(corsOptions))
+app.use(cors())
 app.use(auth.force_https)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+
 
 app.use('/users', usersRoutes)
 app.use('/videos', videosRoutes)
@@ -34,6 +31,6 @@ app.get('/', function (req, res) {
   res.send('hello')
 })
 
-app.listen(process.env.PORT || 4000, function () {
+app.listen(4000, function () {
   console.log('Server started on port 4000')
 })
