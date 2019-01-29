@@ -25,6 +25,10 @@ const userSchema = new Schema({
   },
   token: {
     type: String
+  },
+  status: {
+    type: String,
+    enum: ['approved', 'pending']
   }
 })
 

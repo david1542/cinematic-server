@@ -13,6 +13,7 @@ exports.tokenMiddleware = function (req, res, next) {
   } else {
     User.findOne()
       .where('token').equals(token)
+      .where('status').equals('approved')
       .where('deletedAt').exists(false)
       .exec(function (err, user) {
         if (err) return res.sendStatus(500)

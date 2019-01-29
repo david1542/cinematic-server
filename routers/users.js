@@ -41,12 +41,13 @@ router.post('/login', function (req, res) {
   const { email, password } = req.body.userDetails
   User.findOne()
     .where('email').equals(email.toLowerCase())
+    .where('status').equals('approved')
     .exec(function (err, user) {
       if (err) return res.sendStatus(500)
       if (!user) return res.sendStatus(404)
 
       bcrypt.compare(password, user.password, function (err, valid) {
-        if (err || !valid) return res.sendStatus(404)
+        if (err || !valid) return res.sendStatus(400)
         user.token = crypto.randomBytes(60).toString('hex')
         user.save(function (err) {
           if (err) res.sendStatus(500)
