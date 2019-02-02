@@ -5,6 +5,9 @@ const { AMQPRPCServer } = require('@elastic.io/amqp-rpc');
 
 amqp.connect(config.AMQP_URI).then(async _conn => {
 
+  const ch = await _conn.createChannel()
+  await ch.assertQueue(config.QUEUES.RPC_TORRENTS)
+
   const requestsQueue = config.QUEUES.RPC_TORRENTS
   const server = new AMQPRPCServer(_conn, { requestsQueue });
   await server.start()

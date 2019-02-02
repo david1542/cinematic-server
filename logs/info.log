@@ -935,3 +935,8 @@
 {"level":"info","message":"GET"}
 {"level":"info","message":"OPTIONS"}
 {"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
