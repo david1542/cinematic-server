@@ -18,7 +18,7 @@ module.exports = function (server) {
         socket.emit('authenticated')
 
         // Initializing event handlers
-        initialize(user._id, socket)
+        initialize(user.token, socket)
       })
     })
   })
@@ -30,9 +30,9 @@ module.exports = function (server) {
     })
   }
 
-  const initialize = (userId, socket) => {
-    console.log('User with id ' + userId + ' has connected')
-    connectedUsers.set(String(userId), socket.id);
+  const initialize = (token, socket) => {
+    console.log('User with token ' + token + ' has connected')
+    connectedUsers.set(token, socket.id);
 
     socket.on('disconnect', function () {
       console.log(`User with socket id ${socket.id} has disconnected`)
@@ -40,9 +40,9 @@ module.exports = function (server) {
     })
   }
 
-  const notifyUser = (userId, event, payload) => {
+  const notifyUser = (token, event, payload) => {
     return new Promise(function (resolve, reject) {
-      const notifiedSocket = connectedUsers.get(String(userId))
+      const notifiedSocket = connectedUsers.get(token)
 
       // Notify user if he's logged in 
       if (notifiedSocket) {

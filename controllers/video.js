@@ -260,15 +260,13 @@ module.exports = (io) => {
   controller.searchTorrents = async (req, res) => {
     if (!req.query.term) return res.sendStatus(400)
 
-    const {
-      user
-    } = req
+    const token = req.headers['token'] || req.query.token
     const term = req.query.term
 
     torrents.emit('search', term)
     torrents.on('done', (data) => {
       console.log('Done!')
-      io.notifyUser(user._id, 'torrents', data)
+      io.notifyUser(token, 'torrents', data)
     })
 
     res.sendStatus(200)
