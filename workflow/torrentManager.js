@@ -25,6 +25,33 @@ torrentSearch.enableProvider('ThePirateBay')
 torrentSearch.enableProvider('KickassTorrents')
 torrentSearch.enableProvider('1337x')
 
+const filterTorrents = (torrents, term) => new Promise((resolve) => {
+  const result = torrents.filter(torrent => (
+    torrent.title.toLowerCase().includes(term.toLowerCase())
+  )).sort(function (a, b) {
+    if (a.seeds > b.seeds) {
+      return -1
+    } else {
+      return 1
+    }
+  }).slice(0, 4)
+
+  resolve(result)
+})
+
+const transformLanguages = langs => new Promise((resolve) => {
+  const result = Object.keys(langs).map(code => {
+    const lang = utils.isoLangs[code]
+    const name = lang ? lang.nativeName || lang.name : null
+    return {
+      name,
+      code
+    }
+  })
+
+  resolve(result)
+})
+
 exports.searchTorrents = (term) => new Promise(async (resolve, reject) => {
   console.log('Sending requests for fetching torrents and subtitles')
   const torrents = torrentSearch.search(term, 'Movies')
@@ -36,24 +63,14 @@ exports.searchTorrents = (term) => new Promise(async (resolve, reject) => {
 
   const result = await Promise.all([torrents, subtitles])
   console.log('Done! fetched subtitles and torrents')
-  const filteredTorrents = result[0].filter(torrent => (
-    torrent.title.toLowerCase().includes(term.toLowerCase())
-  )).sort(function (a, b) {
-    if (a.seeds > b.seeds) {
-      return -1
-    } else {
-      return 1
-    }
-  }).slice(0, 4)
 
-  const availableLangs = Object.keys(result[1]).map(code => {
-    const lang = utils.isoLangs[code]
-    const name = lang ? lang.nativeName || lang.name : null
-    return {
-      name,
-      code
-    }
-  })
+  const manipulation = await Promise.all([
+    filterTorrents(result[0], term),
+    transformLanguages(result[1])
+  ])
+
+  const filteredTorrents = manipulation[0]
+  const availableLangs = manipulation[1]
 
   if (!filteredTorrents) {
     return res.sendStatus(500)

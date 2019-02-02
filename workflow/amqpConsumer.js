@@ -15,11 +15,14 @@ amqp.connect(config.AMQP_URI).then(async _conn => {
   console.log('Started new RPC Server!')
   console.log('Listening on ' + config.AMQP_URI)
 
-  server.addCommand('search-torrents', async (term) => {
+  server.addCommand('search-torrents', async ({term, token}) => {
     console.log('-------------------------------')
     console.log('New Torrents Request! Term: ' + term)
-    const result = await torrentManager.searchTorrents(term)
-    return result
+    const data = await torrentManager.searchTorrents(term)
+    return {
+      data,
+      token
+    }
   })
   // _conn.createChannel().then(ch => {
   //   ch.assertQueue(config.QUEUES.RPC_TORRENTS);
