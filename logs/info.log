@@ -1,0 +1,937 @@
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"DELETE"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"DELETE"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"POST"}
+{"level":"error","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"GET"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"DELETE"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}

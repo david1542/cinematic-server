@@ -5,7 +5,7 @@ exports.tokenMiddleware = function (req, res, next) {
 
   // Missing token
   if (!token || token.length !== 120) {
-    res.status(400).json({
+    res.status(401).json({
       status: 'error',
       message: 'Missing token'
     })

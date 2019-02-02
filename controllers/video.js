@@ -1,0 +1,290 @@
+module.exports = (io) => {
+  const fs = require('fs')
+  const https = require('https')
+  const crypto = require('crypto')
+  const OS = require('opensubtitles-api')
+  const path = require('path')
+  const srt2vtt = require('srt2vtt')
+  const streamifier = require('streamifier')
+  const rimraf = require('rimraf')
+  const config = require('../config')
+  const torrents = require('../events/torrents')
+  const OpenSubtitles = new OS(config.OPENSUBTITLES_SETTINGS)
+  const controller = {};
+
+  controller.getSubtitles = async (req, res, next) => {
+    if (!req.query.query && !req.query.langcode) return res.sendStatus(400)
+
+    const {
+      filename
+    } = req.query
+    console.log('Fetching subtitles for: ' + filename)
+    const options = {
+      ...req.query
+    }
+
+    if (!options.limit) {
+      options.limit = 'all'
+    }
+    if (!options.extensions) {
+      options.extensions = ['srt', 'vtt']
+    }
+
+    options.filename = undefined
+    let subtitles
+    try {
+      subtitles = await OpenSubtitles.search(options)
+    } catch (err) {
+      return res.sendStatus(500)
+    }
+
+    console.log('Fetched subtitles for: ' + filename)
+    const lang = subtitles[options.langcode]
+
+    if (!lang) return res.sendStatus(404)
+
+    const arrayOfNames = lang.map(file => {
+      const array = file.filename.split(/[.-]+/)
+      array.pop()
+
+      return array
+    })
+
+    let highestMatch = 0
+    let bestIndex = 0
+
+    const likeWords = {
+      'x264': 'h264',
+      'h264': 'x264'
+    }
+
+    arrayOfNames.forEach((nameArr, index) => {
+      let counter = 0
+      nameArr.forEach(part => {
+        if (filename.includes(part) || filename.includes(likeWords[part.toLowerCase()])) {
+          counter++
+        }
+      })
+
+      if (counter > highestMatch) {
+        bestIndex = index
+        highestMatch = counter
+      } else if (counter === highestMatch) {
+        if (lang[index].downloads > lang[bestIndex].downloads) {
+          bestIndex = index
+          highestMatch = counter
+        }
+      }
+    })
+
+    console.log('Found subtitles best match!')
+    const match = lang[bestIndex]
+    const parts = match.filename.split('.')
+    const fileType = '.' + parts[parts.length - 1]
+    const fileName = crypto.randomBytes(40).toString('hex')
+    const pathParts = path.dirname(require.main.filename).split('\\')
+    const appDir = pathParts.slice(0, pathParts.length - 1).join('\\')
+
+    const remoteDir = appDir + '/tmp/' + fileName + fileType
+
+    const tmpFile = fs.createWriteStream(remoteDir)
+
+    const tryDownload = () => {
+      console.log('Downloading the srt file from opensubtitles')
+      https.get(match.url, response => {
+        if (!(response.pipe)) {
+          tryDownload()
+        }
+
+        response.pipe(tmpFile)
+      })
+    }
+
+    tmpFile.on('open', () => {
+      tryDownload()
+    })
+
+    tmpFile.on('finish', () => {
+      console.log('Saved file in tmp folder')
+      var data = fs.readFileSync(remoteDir)
+
+      console.log('Conerting the .srt file to .vtt file')
+      srt2vtt(data, 1255, (err, vttData) => {
+        console.log('Conversion done!')
+        if (err) {
+          console.log(err)
+          return res.sendStatus(500)
+        }
+        const outputDir = appDir + '/tmp/' + fileName + '.vtt'
+
+        console.log(outputDir)
+        fs.writeFileSync(outputDir, vttData)
+
+        const subtitlesStream = streamifier.createReadStream(vttData)
+        const subtitlesName = parts.slice(0, parts.length - 2).join('.') + '.vtt'
+        res.set('Content-Type', 'mime/vtt')
+        res.set('Content-Disposition', 'attachment; filename=' + subtitlesName)
+
+        console.log('Sending the .vtt file to the client')
+        // Sending files to the user
+        subtitlesStream.pipe(res)
+
+        res.on('finish', () => {
+          console.log('Finished streaming the subtitles file to the client. Cleaning the 2 files')
+          fs.unlinkSync(outputDir)
+          fs.unlinkSync(remoteDir)
+        })
+      })
+    })
+  }
+
+  controller.pauseTorrent = (req, res) => {
+    const {
+      magnet
+    } = req.params
+    const {
+      client
+    } = req.client
+
+    try {
+      client.remove(magnet, (err) => {
+        if (err) throw new Error(err)
+
+        const torrentPath = req.os.name === 'windows' ? 'C:/cinematic/movies' : '/cinematic/movies'
+        rimraf(torrentPath, () => {
+          console.log('Removed torrents data')
+
+          res.sendStatus(200)
+        })
+      })
+    } catch (err) {
+      res.sendStatus(500)
+    }
+  }
+
+  controller.stream = (req, res) => {
+    const {
+      client
+    } = req.client
+    const {
+      magnet
+    } = req.query
+    let torrent = client.get(magnet)
+
+    if (!torrent) return res.sendStatus(404)
+
+    let file = torrent.files[0]
+
+    for (let i = 1; i < torrent.files.length; i++) {
+      if (torrent.files[i].length > file.length) {
+        file = torrent.files[i]
+      }
+    }
+
+    let range = req.headers.range
+    if (!range) {
+      let err = new Error('Wrong range')
+      err.status = 416
+
+      return res.status(416).json(err)
+    }
+
+    let positions = range.replace(/bytes=/, '').split('-')
+    let start = parseInt(positions[0], 10)
+    let fileSize = file.length
+
+    let end = positions[1] ? parseInt(positions[1], 10) : fileSize - 1
+    let chunksize = (end - start) + 1
+    let head = {
+      'Content-Range': 'bytes ' + start + '-' + end + '/' + fileSize,
+      'Accept-Ranges': 'bytes',
+      'Content-Length': chunksize,
+      'Content-Type': 'video/mp4'
+    }
+
+    res.writeHead(206, head)
+
+    let streamPosition = {
+      start: start,
+      end: end
+    }
+
+    let stream = file.createReadStream(streamPosition)
+
+    stream.pipe(res)
+    stream.on('error', (err) => {
+      console.log(err)
+    })
+  }
+
+  controller.addTorrent = (req, res) => {
+    console.log('Adding torrent...')
+    let magnet = req.params.magnet
+    const {
+      client
+    } = req.client
+
+    const torrent = client.get(magnet)
+    if (torrent) {
+      torrent.resume()
+      processTorrent(torrent)
+      return
+    }
+
+    const torrentPath = req.os.name === 'windows' ? 'C:/cinematic/movies' : '/cinematic/movies'
+    client.add(magnet, {
+      path: torrentPath
+    }, (addedTorrent) => {
+      if (addedTorrent.downloaded === addedTorrent.length) {
+        req.client.status = 'completed'
+      }
+      processTorrent(addedTorrent)
+    })
+
+    const processTorrent = (torrent) => {
+      let file = torrent.files[0]
+
+      for (let i = 1; i < torrent.files.length; i++) {
+        if (torrent.files[i].length > file.length) {
+          file = torrent.files[i]
+        }
+      }
+
+      res.json({
+        magnet,
+        fileName: file.name
+      })
+    }
+  }
+
+  controller.searchTorrents = async (req, res) => {
+    if (!req.query.term) return res.sendStatus(400)
+
+    const {
+      user
+    } = req
+    const term = req.query.term
+
+    torrents.emit('search', term)
+    torrents.on('done', (data) => {
+      console.log('Done!')
+      io.notifyUser(user._id, 'torrents', data)
+    })
+
+    res.sendStatus(200)
+  }
+
+  controller.getStats = (req, res, next) => {
+    const {
+      stats,
+      status
+    } = req.client
+    res.status(200)
+    res.json({
+      stats,
+      status
+    })
+  }
+
+  return controller
+}
