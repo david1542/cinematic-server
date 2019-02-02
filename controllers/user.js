@@ -1,57 +1,69 @@
 const crypto = require('crypto')
 const bcrypt = require('bcrypt-nodejs')
 const User = require('../models/user')
+const errors = require('../errors')
 
-exports.register = (req, res) => {
-  if (!req.body.userDetails || !validateUser(req.body.userDetails)) return res.sendStatus(400)
 
-  console.log('User is registering')
-  function validateUser (userDetails) {
+const validateUser = (userDetails, type) => {
+  if (type === 'register') {
     if (!userDetails.email || !userDetails.password ||
       !userDetails.firstName || !userDetails.lastName) {
       return false
     }
+  } else if (type === 'login') {
+    if (!userDetails.email || !userDetails.password) {
+      return false
+    }
+  }
 
-    return true
+  return true
+}
+
+exports.register = (req, res) => {
+  if (!req.body.userDetails || !validateUser(req.body.userDetails, 'register')) {
+    return errors.handler(req, res)(new errors.ValidationError('Invalid user details'))
   }
 
   const { userDetails } = req.body
 
-  console.log('Creating new user')
-  User.create(userDetails, function (err, newUser) {
-    if (err || !newUser) {
-      console.log('Error')
-      console.log(err)
-      console.log(newUser)      
-      return res.sendStatus(500)
+  User.create(userDetails).then(newUser => {
+    if (!newUser) {
+      return errors.handler(req, res)(new errors.InternalError('Failed to create user'))
     }
 
-    console.log('Successfully created user')
     res.json(newUser)
-  })
+  }).catch(errors.handler(req, res))
 }
 
 exports.login = (req, res) => {
-  if (!req.body.userDetails) return res.sendStatus(400)
+  if (!req.body.userDetails || !validateUser(req.body.userDetails, 'login')) {
+    return errors.handler(req, res)(new errors.ValidationError('Invalid user details'))
+  }
 
   const { email, password } = req.body.userDetails
   User.findOne()
     .where('email').equals(email.toLowerCase())
-    .where('status').equals('approved')
-    .exec(function (err, user) {
-      if (err) return res.sendStatus(500)
-      if (!user) return res.sendStatus(404)
+    .exec().then(user => {
+      if (!user) {
+        return errors.handler(req, res)(new errors.NotFound('User not found'))
+      }
+      if (user.status !== 'approved') {
+        return errors.handler(req, res)(new errors.UnauthorizedAccess('You need to be approved before you can login'))
+      }
 
       bcrypt.compare(password, user.password, function (err, valid) {
-        if (err || !valid) return res.sendStatus(400)
-        user.token = crypto.randomBytes(60).toString('hex')
-        user.save(function (err) {
-          if (err) return res.sendStatus(500)
+        if (!valid) {
+          return errors.handler(req, res)(new errors.ValidationError('Password is incorrect'))
+        } else if (err) {
+          return errors.handler(req, res)(new errors.InternalError('Failed to match the passwords'))
+        }
 
-          res.json(user)
-        })
+        user.token = crypto.randomBytes(60).toString('hex')
+        user.save().then(loginUser => {
+          res.json(loginUser)
+        }).catch(errors.handler(req, res))
       })
-    })
+    }).catch(errors.handler(req, res))
 }
 
 exports.me = (req, res) => {
@@ -59,7 +71,10 @@ exports.me = (req, res) => {
 }
 
 exports.addToFavorites = (req, res) => {
-  if (!req.body.id) return res.sendStatus(400)
+  if (!req.body.id) {
+    return errors.handler(req, res)(new errors.ValidationError('An id is required'))
+  }
+
   const {
     user
   } = req
@@ -68,17 +83,22 @@ exports.addToFavorites = (req, res) => {
   } = req.body
 
   user.favorites.push(id)
-  user.save(function (err, newUser) {
-    if (err || !newUser) return res.sendStatus(500)
+  user.save().then(newUser => {
+    if (!newUser) {
+      return errors.handler(req, res)(new errors.InternalError('Failed to save user'))
+    }
 
     res.json({
       id
     })
-  })
+  }).catch(errors.handler(req, res))
 }
 
 exports.removeFromFavorites = (req, res) => {
-  if (!req.body.id) return res.sendStatus(400)
+  if (!req.body.id) {
+    return errors.handler(req, res)(new errors.ValidationError('An id is required'))
+  }
+
   const {
     user
   } = req
@@ -95,9 +115,11 @@ exports.removeFromFavorites = (req, res) => {
       safe: true,
       new: true
     })
-    .exec(function (err, newUser) {
-      if (err || !newUser) return res.sendStatus(500)
+    .exec().then(newUser => {
+      if (!newUser) {
+        return errors.handler(req, res)(new errors.InternalError('Failed to save user'))
+      }
 
       res.json({ id })
-    })
+    }).catch(errors.handler(req, res))
 }

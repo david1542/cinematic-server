@@ -1047,3 +1047,185 @@
 {"level":"info","message":"GET"}
 {"level":"info","message":"OPTIONS"}
 {"level":"info","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"error","message":"POST"}
+{"level":"error","message":"POST"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Invalid input.","error":"Invalid user details"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Invalid input.","error":"Invalid user details"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthorized access.","error":"You need to be approved before you can login"}}
+{"level":"warn","message":"POST"}
+{"message":"Connected to amqp!","level":"info"}
+{"level":"info","message":"OPTIONS"}
+{"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"level":"warn","message":"GET"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"POST"}
+{"level":"info","message":"OPTIONS"}
+{"level":"info","message":"GET"}

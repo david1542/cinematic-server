@@ -8,12 +8,17 @@ module.exports = (io) => {
   const streamifier = require('streamifier')
   const rimraf = require('rimraf')
   const config = require('../config')
+  const errors = require('../errors')
   const torrents = require('../events/torrents')
+
   const OpenSubtitles = new OS(config.OPENSUBTITLES_SETTINGS)
   const controller = {};
 
   controller.getSubtitles = async (req, res, next) => {
-    if (!req.query.query && !req.query.langcode) return res.sendStatus(400)
+    if (!req.query.query && !req.query.langcode) {
+      return errors.handler(req, res)(new errors
+        .ValidationError('You need to supply a query term and a language code'))
+    }
 
     const {
       filename
@@ -35,13 +40,17 @@ module.exports = (io) => {
     try {
       subtitles = await OpenSubtitles.search(options)
     } catch (err) {
-      return res.sendStatus(500)
+      return errors.handler(req, res)(new errors
+        .InternalError('Failed to fetch subtitles from Open Subtitles'))
     }
 
     console.log('Fetched subtitles for: ' + filename)
     const lang = subtitles[options.langcode]
 
-    if (!lang) return res.sendStatus(404)
+    if (!lang) {
+      return errors.handler(req, res)(new errors
+        .NotFound('No subtitles for that given language code'))
+    }
 
     const arrayOfNames = lang.map(file => {
       const array = file.filename.split(/[.-]+/)
@@ -110,11 +119,11 @@ module.exports = (io) => {
 
       console.log('Conerting the .srt file to .vtt file')
       srt2vtt(data, 1255, (err, vttData) => {
-        console.log('Conversion done!')
         if (err) {
-          console.log(err)
-          return res.sendStatus(500)
+          return errors.handler(req, res)(new errors
+            .InternalError('Failed to convert srt to vtt'))
         }
+        console.log('Conversion done!')
         const outputDir = appDir + '/tmp/' + fileName + '.vtt'
 
         console.log(outputDir)
@@ -150,15 +159,16 @@ module.exports = (io) => {
       client.remove(magnet, (err) => {
         if (err) throw new Error(err)
 
-        const torrentPath = req.os.name === 'windows' ? 'C:/cinematic/movies' : '/cinematic/movies'
-        rimraf(torrentPath, () => {
-          console.log('Removed torrents data')
+        res.sendStatus(200)
+        // const torrentPath = req.os.name === 'windows' ? 'C:/cinematic/movies' : '/cinematic/movies'
+        // rimraf(torrentPath, () => {
+        //   console.log('Removed torrents data')
 
-          res.sendStatus(200)
-        })
+        //   res.sendStatus(200)
+        // })
       })
     } catch (err) {
-      res.sendStatus(500)
+      errors.handler(req, res)(err)
     }
   }
 
@@ -171,7 +181,10 @@ module.exports = (io) => {
     } = req.query
     let torrent = client.get(magnet)
 
-    if (!torrent) return res.sendStatus(404)
+    if (!torrent) {
+      return errors.handler(req, res)(new errors
+        .NotFound('Torrent was not found for that given magnet'))
+    }
 
     let file = torrent.files[0]
 
@@ -183,10 +196,8 @@ module.exports = (io) => {
 
     let range = req.headers.range
     if (!range) {
-      let err = new Error('Wrong range')
-      err.status = 416
-
-      return res.status(416).json(err)
+      return errors.handler(req, res)(new errors
+        .WrongRange('Range doesn\'t exist'))
     }
 
     let positions = range.replace(/bytes=/, '').split('-')
@@ -258,7 +269,10 @@ module.exports = (io) => {
   }
 
   controller.searchTorrents = async (req, res) => {
-    if (!req.query.term) return res.sendStatus(400)
+    if (!req.query.term) {
+      return errors.handler(req, res)(new errors
+        .ValidationError('Query must be specified'))
+    }
 
     const token = req.headers['token'] || req.query.token
     const term = req.query.term
@@ -272,7 +286,7 @@ module.exports = (io) => {
     res.sendStatus(200)
   }
 
-  controller.getStats = (req, res, next) => {
+  controller.getStats = (req, res) => {
     const {
       stats,
       status

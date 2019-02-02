@@ -1,5 +1,6 @@
 const User = require('../models/user')
 const WebTorrent = require('webtorrent-hybrid')
+const errors = require('../errors')
 
 exports.authenticateClient = connectedUsers => {
   return async (req, res, next) => {
@@ -8,7 +9,9 @@ exports.authenticateClient = connectedUsers => {
 
     if (!client) {
       const user = await findUserWithToken(token)
-      if (!user) return res.sendStatus(401)
+      if (!user) {
+        return errors.handler(req, res)(new errors.UnauthenticatedAccess('Token is invalid'))
+      }
 
       client = createClient(connectedUsers)(token)
       connectedUsers.set(String(client.token), client)
@@ -76,17 +79,15 @@ exports.tokenMiddleware = async (req, res, next) => {
 
   // Missing token
   if (!token || token.length !== 120) {
-    res.status(401).json({
-      status: 'error',
-      message: 'Missing token'
-    })
+    return errors.handler(req, res)(new errors.UnauthenticatedAccess('Missing token'))
     // We have a token
   } else {
     const user = await findUserWithToken(token)
-    if (!user) return res.sendStatus(401)
+    if (!user) {
+      return errors.handler(req, res)(new errors.UnauthenticatedAccess('Token is invalid'))
+    }
 
     req.user = user
-
     next()
   }
 }
