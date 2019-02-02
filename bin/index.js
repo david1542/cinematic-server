@@ -1,5 +1,5 @@
 const config = require('../config')
-const app = require('../app')
+const app = require('../app/index')
 
 const server = require('http').Server(app)
 const sockets = require('../services/socket')(server)
