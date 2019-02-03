@@ -233,6 +233,21 @@ exports.addTorrent = (req, res) => {
     client
   } = req.client
 
+  const processTorrent = (torrent) => {
+    let file = torrent.files[0]
+
+    for (let i = 1; i < torrent.files.length; i++) {
+      if (torrent.files[i].length > file.length) {
+        file = torrent.files[i]
+      }
+    }
+
+    res.json({
+      magnet,
+      fileName: file.name
+    })
+  }
+  
   const torrent = client.get(magnet)
   if (torrent) {
     torrent.resume()
@@ -249,21 +264,6 @@ exports.addTorrent = (req, res) => {
     }
     processTorrent(addedTorrent)
   })
-
-  const processTorrent = (torrent) => {
-    let file = torrent.files[0]
-
-    for (let i = 1; i < torrent.files.length; i++) {
-      if (torrent.files[i].length > file.length) {
-        file = torrent.files[i]
-      }
-    }
-
-    res.json({
-      magnet,
-      fileName: file.name
-    })
-  }
 }
 
 exports.searchTorrents = async (req, res) => {
