@@ -34,19 +34,25 @@ amqp.connect(config.AMQP_URI).then(async _conn => {
   server.addCommand('search-torrents', async ({term, token}) => {
     console.log('-------------------------------')
     console.log('New Torrents Request! Term: ' + term)
+    console.log('Checking if there is anything inside the cache...')
 
     const key = `movieData-${term}`
     const cacheData = await redisClient.getAsync(key)
 
     if (cacheData) {
+      console.log('Found something inside the cache!')
       return {
         data: JSON.parse(cacheData),
         token
       }
     } else {
+      console.log('Didn\'t find anything inside the cache. Executing search query...')
       const data = await torrentManager.searchTorrents(term)
+
+      console.log('Caching the results...')
       // Caching the results
       await redisClient.setex(key, 86400, JSON.stringify(data))
+      console.log('Done Caching. Returning results to the client')
       return {
         data,
         token
