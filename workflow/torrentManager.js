@@ -23,6 +23,9 @@ console.log('Connected to Open Subtitles')
 torrentSearch.enablePublicProviders()
 torrentSearch.enableProvider('ThePirateBay')
 torrentSearch.enableProvider('KickassTorrents')
+torrentSearch.enableProvider('Torrent9')
+torrentSearch.enableProvider('Torrentz2')
+torrentSearch.enableProvider('TorrentProject')
 torrentSearch.enableProvider('1337x')
 
 const filterTorrents = (torrents, term) => new Promise((resolve) => {
@@ -54,7 +57,8 @@ const transformLanguages = langs => new Promise((resolve) => {
 
 exports.searchTorrents = (term) => new Promise(async (resolve, reject) => {
   console.log('Sending requests for fetching torrents and subtitles')
-  const torrents = torrentSearch.search(term, 'Movies')
+  const torrents = torrentSearch.search(term, 'Movies', 20)
+
   const subtitles = OpenSubtitles.search({
     extensions: ['srt', 'vtt'],
     query: term,

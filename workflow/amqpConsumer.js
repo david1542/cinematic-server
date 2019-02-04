@@ -1,10 +1,26 @@
 const amqp = require('amqplib')
 const config = require('../config')
-const torrentManager = require('./torrentManager')
 const { AMQPRPCServer } = require('@elastic.io/amqp-rpc');
+const redis = require('redis');
+const bluebird = require('bluebird')
+const torrentManager = require('./torrentManager')
+const logging = require('../logging')
+// Promisifying all the methods of redis
+bluebird.promisifyAll(redis)
+
+// Creating redis client
+const redisClient = redis.createClient(config.REDIS_URL)
+
+redisClient.on('connect', () => {
+  console.log(`Redis client connected! URL: ${config.REDIS_URL}`)
+})
+
+redisClient.on('error', (err) => {
+  console.log(err)
+  console.log('Something went wrong')
+})
 
 amqp.connect(config.AMQP_URI).then(async _conn => {
-
   const ch = await _conn.createChannel()
   await ch.assertQueue(config.QUEUES.RPC_TORRENTS)
 
@@ -18,46 +34,23 @@ amqp.connect(config.AMQP_URI).then(async _conn => {
   server.addCommand('search-torrents', async ({term, token}) => {
     console.log('-------------------------------')
     console.log('New Torrents Request! Term: ' + term)
-    const data = await torrentManager.searchTorrents(term)
-    return {
-      data,
-      token
+
+    const key = `movieData-${term}`
+    const cacheData = await redisClient.getAsync(key)
+
+    if (cacheData) {
+      return {
+        data: JSON.parse(cacheData),
+        token
+      }
+    } else {
+      const data = await torrentManager.searchTorrents(term)
+      // Caching the results
+      await redisClient.setex(key, 86400, JSON.stringify(data))
+      return {
+        data,
+        token
+      }
     }
   })
-  // _conn.createChannel().then(ch => {
-  //   ch.assertQueue(config.QUEUES.RPC_TORRENTS);
-
-  //   console.log("Waiting for messages in %s", config.QUEUES.RPC_TORRENTS);
-
-  //   // Limiting the number of concurrently messages
-  //   ch.prefetch(1)
-  //   // Starting to listen to the RPC QUEUE
-  //   // This queue will receive movie names
-  //   // And then respond with appropriate torrents
-  //   // And subtitle
-  //   ch.consume(config.QUEUES.RPC_TORRENTS, function(msg) {
-  //     const msgString = msg.content.toString()
-  //     const term = msgString.slice(1, msgString.length - 1)
-
-  //     console.log('---------------------------')
-  //     console.log('New Request! Term: ' + term)
-  //     // Calling the search torrents method inside the
-  //     // Torrent manager
-
-  //     // setTimeout(() => {
-  //     //   ch.sendToQueue(msg.properties.replyTo,
-  //     //     Buffer.from(JSON.stringify(term)),
-  //     //     {correlationId: msg.properties.correlationId})
-  //     //   ch.ack(msg);
-  //     // }, 3000)
-  //     torrentManager.searchTorrents(term)
-  //       .then(result => {
-  //         console.log(msg.properties.correlationId)
-  //         ch.sendToQueue(msg.properties.replyTo,
-  //           Buffer.from(JSON.stringify(result)),
-  //           {correlationId: msg.properties.correlationId})
-  //         // ch.ack(msg);
-  //       })
-  //   }, {noAck: true});
-  // });
 });

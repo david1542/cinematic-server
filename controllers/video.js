@@ -252,18 +252,17 @@ exports.addTorrent = (req, res) => {
   if (torrent) {
     torrent.resume()
     processTorrent(torrent)
-    return
+  } else {
+    const torrentPath = req.os.name === 'windows' ? 'C:/cinematic/movies' : '/cinematic/movies'
+    client.add(magnet, {
+      path: torrentPath
+    }, (addedTorrent) => {
+      if (addedTorrent.downloaded === addedTorrent.length) {
+        req.client.status = 'completed'
+      }
+      processTorrent(addedTorrent)
+    })
   }
-
-  const torrentPath = req.os.name === 'windows' ? 'C:/cinematic/movies' : '/cinematic/movies'
-  client.add(magnet, {
-    path: torrentPath
-  }, (addedTorrent) => {
-    if (addedTorrent.downloaded === addedTorrent.length) {
-      req.client.status = 'completed'
-    }
-    processTorrent(addedTorrent)
-  })
 }
 
 exports.searchTorrents = async (req, res) => {
