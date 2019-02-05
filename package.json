@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon bin/index.js",
-    "start": "node bin/index.js",
-    "worker": "node workflow/amqpConsumer.js",
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 bin/index.js",
+    "worker": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 workflow/amqpConsumer.js",
     "worker:dev": "nodemon workflow/amqpConsumer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
