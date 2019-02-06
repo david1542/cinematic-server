@@ -49,9 +49,12 @@ amqp.connect(config.AMQP_URI).then(async _conn => {
       console.log('Didn\'t find anything inside the cache. Executing search query...')
       const data = await torrentManager.searchTorrents(term)
 
-      console.log('Caching the results...')
-      // Caching the results
-      await redisClient.setex(key, 86400, JSON.stringify(data))
+      if (data.torrents.length > 0) {
+        console.log('Caching the results...')
+        // Caching the results
+        await redisClient.setex(key, 86400, JSON.stringify(data))
+      }
+
       console.log('Done Caching. Returning results to the client')
       return {
         data,

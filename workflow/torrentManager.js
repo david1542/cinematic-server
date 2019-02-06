@@ -57,7 +57,7 @@ const transformLanguages = langs => new Promise((resolve) => {
 
 exports.searchTorrents = (term) => new Promise(async (resolve, reject) => {
   console.log('Sending requests for fetching torrents and subtitles')
-  const torrents = torrentSearch.search(term, 'Movies', 20)
+  const torrents = torrentSearch.search(term, 'Movies')
 
   const subtitles = OpenSubtitles.search({
     extensions: ['srt', 'vtt'],

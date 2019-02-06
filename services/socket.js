@@ -1,60 +1,80 @@
-module.exports = function (server) {
-  const io = require('socket.io')(server)
-  const User = require('../models/user')
+const socketIo = require('socket.io')
+const User = require('../models/user')
+const torrents = require('../events/torrents')
 
-  // Array of connected users
-  const connectedUsers = new Map()
+class SocketManager {
+  constructor() {
+    this.io = null
+    this.connectedUsers = new Map()
 
-  io.on('connection', function (socket) {
-    socket.on('authentication', ({ token }) => {
-      User.findOne()
-      .where('token').equals(token)
-      .where('status').equals('approved')
-      .exec(function(err, user) {
-        if(err || !user) {
-          return socket.emit('unauthorized')
-        }
+    this.initialize = this.initialize.bind(this)
+    this.initiateUser = this.initiateUser.bind(this)
+    this.notifyUser = this.notifyUser.bind(this)
+    this.removeSocketId = this.removeSocketId.bind(this)
+  }
+
+  initialize(server) {
+    return new Promise(resolve => {
+      this.io = socketIo(server)
+      this.io.on('connection', socket => {
+        socket.on('authentication', ({ token }) => {
+          User.findOne()
+          .where('token').equals(token)
+          .where('status').equals('approved')
+          .exec((err, user) => {
+            if(err || !user) {
+              return socket.emit('unauthorized')
+            }
+        
+            socket.emit('authenticated')
     
-        socket.emit('authenticated')
-
-        // Initializing event handlers
-        initialize(user.token, socket)
+            // Initializing event handlers
+            this.initiateUser(user.token, socket)
+          })
+        })
       })
-    })
-  })
 
-  const removeSocketId = socketId => {
-    Object.keys(connectedUsers).forEach(function (key) {
-      if (connectedUsers.get(key) === socketId)
-        connectedUsers.delete(key)
+      resolve(this)
     })
   }
 
-  const initialize = (token, socket) => {
+  initiateUser(token, socket) {
+    // Creating a new torrent client
+    torrents.emit('create-client', token)
+
     console.log('User with token ' + token + ' has connected')
-    connectedUsers.set(token, socket.id);
+    this.connectedUsers.set(token, socket.id);
 
-    socket.on('disconnect', function () {
+    socket.on('disconnect', () => {
+      // Destroying the torrent client
+      torrents.emit('destroy-client', token)
+      
       console.log(`User with socket id ${socket.id} has disconnected`)
-      removeSocketId(socket.id)
+      this.removeSocketId(socket.id)
     })
   }
 
-  const notifyUser = (token, event, payload) => {
-    return new Promise(function (resolve, reject) {
-      const notifiedSocket = connectedUsers.get(token)
+  removeSocketId(socketId) {
+    Object.keys(this.connectedUsers).forEach(key => {
+      if (this.connectedUsers.get(key) === socketId) {
+        this.connectedUsers.delete(key)
+      }
+    })
+  }
+
+  notifyUser(token, event, payload) {
+    return new Promise((resolve, reject) => {
+      const notifiedSocket = this.connectedUsers.get(token)
 
       // Notify user if he's logged in 
       if (notifiedSocket) {
-        io.to(notifiedSocket).emit(event, payload)
+        this.io.to(notifiedSocket).emit(event, payload)
         resolve(payload)
       } else {
         reject('User not found')
       }
     })
   }
-
-  return {
-    notifyUser
-  }
 }
+
+module.exports = new SocketManager()

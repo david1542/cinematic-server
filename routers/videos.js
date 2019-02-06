@@ -4,12 +4,10 @@ const auth = require('../middlewares/auth')
 const middlewares = require('../middlewares')
 const controller = require('../controllers/video')
 
-const connectedUserClients = new Map()
-
 router.use(middlewares.operatingSystem)
 router.get('/subtitles', controller.getSubtitles)
 
-router.use(auth.authenticateClient(connectedUserClients))
+router.use(auth.fetchClient)
 
 router.get('/stream/:magnet/pause', controller.pauseTorrent)
 router.get('/stream', controller.stream)

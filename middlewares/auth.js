@@ -1,25 +1,18 @@
 const User = require('../models/user')
 const WebTorrent = require('webtorrent-hybrid')
 const errors = require('../errors')
+const clientsManager = require('../services/clients')
 
-exports.authenticateClient = connectedUsers => {
-  return async (req, res, next) => {
-    const token = req.headers['token'] || req.query.token
-    let client = connectedUsers.get(String(token))
+exports.fetchClient = async (req, res, next) => {
+  const token = req.headers['token'] || req.query.token
+  let client = clientsManager.findClient(token)
 
-    if (!client) {
-      const user = await findUserWithToken(token)
-      if (!user) {
-        return errors.handler(req, res)(new errors.UnauthenticatedAccess('Token is invalid'))
-      }
-
-      client = createClient(connectedUsers)(token)
-      connectedUsers.set(String(client.token), client)
-    }
-
-    req.client = client
-    next()
+  if (!client) {
+    return errors.handler(req, res)(new errors.UnauthenticatedAccess('No torrent client'))
   }
+
+  req.client = client
+  next()
 }
 
 const createClient = connectedUsers => {
