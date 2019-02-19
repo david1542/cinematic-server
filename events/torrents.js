@@ -1,6 +1,6 @@
 const events = require('events')
 const emitter = new events.EventEmitter()
-const { emitter: sockets } = require('./sockets')
+const sockets = require('./sockets')
 const clientsManager = require('../services/clients')
 
 emitter.on('create-client', token => {

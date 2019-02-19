@@ -1,6 +1,6 @@
-const { initializeSockets } = require('./sockets')
+const sockets = require('./sockets')
 
 exports.init = io => new Promise((resolve) => {
-  initializeSockets(io)
+  sockets.initialize(io)
   resolve()
 })
