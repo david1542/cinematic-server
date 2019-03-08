@@ -10,7 +10,6 @@ const appRouter = require('../routers')
 const database = require('../models')
 const listeners = require('../listeners')
 
-app.use(logging.middleware);
 app.use(cors())
 app.use(auth.force_https)
 app.use(bodyParser.json())

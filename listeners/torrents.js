@@ -17,7 +17,11 @@ const search = async (data) => {
 const createChannel = async conn => {
   const requestsQueue = RPC_QUEUE;
 
-  client = new AMQPRPCClient(conn, { requestsQueue });
+  client = new AMQPRPCClient(conn, {
+    requestsQueue,
+    timeout: 120000
+  });
+
   await client.start()
 
   console.log('Started RPC Client!')
