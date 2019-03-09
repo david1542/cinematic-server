@@ -2612,3 +2612,4 @@
 {"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
 {"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
 {"email":null,"level":"warn","message":{"message":"Unauthenticated access.","error":"Missing token"}}
+{"message":"Connected to amqp!","level":"info"}
